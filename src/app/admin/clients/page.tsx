@@ -14,9 +14,9 @@ import {
 } from "@chakra-ui/react";
 
 // Custom componenets
-import ComplexTable from 'views/admin/clients/components/ComplexTable';
+import ComplexTable from 'components/table/ComplexTable';
 // Table data
-import tableData from 'views/admin/clients/variables/tableDataCheck';
+import Clients from 'views/admin/clients/variables/tableDataClients';
 
 
 export default function Default() {
@@ -29,7 +29,7 @@ export default function Default() {
   return (
     <Box pt={{ base: '130px', md: '80px', xl: '80px' }}>
     
-    <ComplexTable tableData={tableData} />
+    <ComplexTable tableData={Clients} />
 
     </ Box>
   );

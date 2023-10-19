@@ -1,4 +1,10 @@
+// React
+import * as React from 'react';
+
+// Chakra Imports
 import { Box, Flex, Table, Tbody, Td, Text, Th, Thead, Tr, useColorModeValue } from '@chakra-ui/react';
+
+// Tanstack Imports
 import {
 	createColumnHelper,
 	flexRender,
@@ -7,13 +13,10 @@ import {
 	SortingState,
 	useReactTable
 } from '@tanstack/react-table';
+
 // Custom components
 import Card from 'components/card/Card';
 import Menu from 'components/menu/MainMenu';
-import * as React from 'react';
-// Assets
-// import { MdCancel, MdCheckCircle, MdOutlineError } from 'react-icons/md';
-
 
 type RowObj = {
 	businessName: [string, boolean];
@@ -25,7 +28,14 @@ type RowObj = {
 
 const columnHelper = createColumnHelper<RowObj>();
 
-// const columns = columnsDataCheck;
+/**
+ * TODOS :
+ * 
+ * - Implment Pagination for the table
+ * 	https://tanstack.com/table/v8/docs/examples/react/pagination
+ *   
+ * */
+
 export default function ComplexTable(props: { tableData: any }) {
 	const { tableData } = props;
 	const [sorting, setSorting] = React.useState<SortingState>([]);
