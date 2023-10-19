@@ -3,7 +3,7 @@ import {
   // MdBarChart,
   MdPerson,
   MdHome,
-  // MdLock,
+  MdLock,
   MdOutlineShoppingCart,
   MdPayments,
   MdTrackChanges,
@@ -74,12 +74,12 @@ const routes: IRoute[] = [
     path: '/profilo',
     icon: <Icon as={MdPerson} width="20px" height="20px" color="inherit" />,
   },
-  // {
-  //   name: 'Sign In',
-  //   layout: '/auth',
-  //   path: '/sign-in',
-  //   icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
-  // },
+  {
+    name: 'Tables',
+    layout: '/admin',
+    path: '/data-tables',
+    icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
+  },
   // {
   //   name: 'RTL Admin',
   //   layout: '/rtl',
