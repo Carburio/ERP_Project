@@ -15,6 +15,7 @@ export const linkStyles = {
 					border: 'none'
 				}
 			},
+
 			_hover: {
 				textDecoration: 'none',
 				border: 'none'

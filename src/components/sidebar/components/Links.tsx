@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 // chakra imports
-import { Box, Flex, HStack, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Flex, HStack, Text, background, useColorModeValue } from '@chakra-ui/react';
 import Link from 'next/link';
 import { IRoute } from 'types/navigation';
 import { usePathname } from 'next/navigation';
@@ -34,6 +34,7 @@ export function SidebarLinks(props: SidebarLinksProps) {
     [pathname],
   );
 
+
   // this function creates the links from the secondary accordions (for example auth -> sign-in -> default)
   const createLinks = (routes: IRoute[]) => {
     return routes.map((route, index: number) => {
@@ -45,7 +46,10 @@ export function SidebarLinks(props: SidebarLinksProps) {
         return (
           <Link key={index} href={route.layout + route.path}>
             {route.icon ? (
-              <Box>
+              <Box 
+                transition='background-color 0.5s, color 0.5s' 
+                _hover={{ bg: brandColor, color: textColor, cursor:'pointer' }}
+              >
                 <HStack
                   spacing={
                     activeRoute(route.path.toLowerCase()) ? '22px' : '26px'
@@ -55,6 +59,7 @@ export function SidebarLinks(props: SidebarLinksProps) {
                 >
                   <Flex w="100%" alignItems="center" justifyContent="center">
                     <Box
+
                       color={
                         activeRoute(route.path.toLowerCase())
                           ? activeIcon
