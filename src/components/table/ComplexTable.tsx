@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 // Chakra Imports
-import { Box, Flex, Table, Tbody, Td, Text, Th, Thead, Tr, useColorModeValue } from '@chakra-ui/react';
+import { Button,Box, Flex, Table, Tbody, Td, Text, Th, Thead, Tr, useColorModeValue } from '@chakra-ui/react';
 
 // Tanstack Imports
 import {
@@ -133,6 +133,25 @@ export default function ComplexTable(props: { tableData: any }) {
 					<Text color={textColor} fontSize='sm' fontWeight='700'>
 						{info.getValue()}
 					</Text>
+				</Flex>
+			)
+		}),
+		columnHelper.display({
+			id: 'actions',
+			// header: () => (
+			// 	<Text
+			// 		justifyContent='space-between'
+			// 		align='center'
+			// 		fontSize={{ sm: '10px', lg: '12px' }}
+			// 		color='gray.400'>
+			// 		Actions
+			// 	</Text>
+			// ),
+			cell: (info) => (
+				<Flex align='center'>
+					<Button color={textColor} fontSize='sm' fontWeight='700'>
+						{info.getValue()}
+					</Button>
 				</Flex>
 			)
 		})

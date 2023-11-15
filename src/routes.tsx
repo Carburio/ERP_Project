@@ -45,7 +45,7 @@ const routes: IRoute[] = [
   {
     name: 'Fornitori',
     layout: '/admin',
-    path: '/fornitori',
+    path: '/providers',
     icon: (
       <Icon
         as={MdTrackChanges}
