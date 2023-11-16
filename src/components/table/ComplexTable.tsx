@@ -1,8 +1,12 @@
-// React
+// React import
 import * as React from 'react';
 
+//Next.js Imports
+import { useRouter, usePathname } from 'next/navigation';
+
 // Chakra Imports
-import { Button,Box, Flex, Table, Tbody, Td, Text, Th, Thead, Tr, useColorModeValue } from '@chakra-ui/react';
+import { Button, Box, Flex, Table, Tbody, Td, Text, Th, Thead, Tr, useColorModeValue } from '@chakra-ui/react';
+
 
 // Tanstack Imports
 import {
@@ -15,6 +19,7 @@ import {
 } from '@tanstack/react-table';
 
 // Custom components
+import { DocumentIcon } from 'components/icons/Icons'
 import Card from 'components/card/Card';
 import Menu from 'components/menu/MainMenu';
 
@@ -25,7 +30,6 @@ type RowObj = {
 	phone: string;
 	registeredOffice: string;
 };
-
 const columnHelper = createColumnHelper<RowObj>();
 
 /**
@@ -150,7 +154,9 @@ export default function ComplexTable(props: { tableData: any }) {
 			cell: (info) => (
 				<Flex align='center'>
 					<Button color={textColor} fontSize='sm' fontWeight='700'>
-						{info.getValue()}
+						<DocumentIcon>
+							{info.getValue()}
+						</ DocumentIcon>
 					</Button>
 				</Flex>
 			)
@@ -172,7 +178,7 @@ export default function ComplexTable(props: { tableData: any }) {
 		<Card flexDirection='column' w='100%' px='0px' overflowX={{ sm: 'scroll', lg: 'hidden' }}>
 			<Flex px='25px' mb="8px" justifyContent='space-between' align='center'>
 				<Text color={textColor} fontSize='22px' fontWeight='700' lineHeight='100%'>
-					Clients
+					{usePathname()}
 				</Text>
 				<Menu />
 			</Flex>
