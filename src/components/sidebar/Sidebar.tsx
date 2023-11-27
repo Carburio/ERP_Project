@@ -6,12 +6,12 @@ import {
   Flex,
   Drawer,
   DrawerBody,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
   Icon,
   useColorModeValue,
-  DrawerOverlay,
   useDisclosure,
-  DrawerContent,
-  DrawerCloseButton
 } from '@chakra-ui/react'
 import Content from 'components/sidebar/components/Content'
 import {

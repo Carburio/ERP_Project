@@ -1,3 +1,5 @@
+'use client'
+
 // React import
 import * as React from 'react';
 
