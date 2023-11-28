@@ -19,7 +19,7 @@ import { MdCancel, MdCheckCircle, MdOutlineError } from 'react-icons/md';
 type RowObj = {
 	name: string;
 	status: string;
-	date: string; 
+	date: string;
 	progress: number;
 };
 
@@ -28,7 +28,7 @@ const columnHelper = createColumnHelper<RowObj>();
 // const columns = columnsDataCheck;
 export default function ComplexTable(props: { tableData: any }) {
 	const { tableData } = props;
-	const [ sorting, setSorting ] = React.useState<SortingState>([]);
+	const [sorting, setSorting] = React.useState<SortingState>([]);
 	const textColor = useColorModeValue('secondaryGray.900', 'white');
 	const borderColor = useColorModeValue('gray.200', 'whiteAlpha.100');
 	let defaultData = tableData;
@@ -64,34 +64,34 @@ export default function ComplexTable(props: { tableData: any }) {
 				</Text>
 			),
 			cell: (info) => (
-			<Flex align='center'>
-												<Icon
-													w='24px'
-													h='24px'
-													me='5px'
-													color={
-														info.getValue() === 'Approved' ? (
-															'green.500'
-														) : info.getValue() === 'Disable' ? (
-															'red.500'
-														) : info.getValue() === 'Error' ? (
-															'orange.500'
-														) : null
-													}
-													as={
-														info.getValue() === 'Approved' ? (
-															MdCheckCircle
-														) : info.getValue() === 'Disable' ? (
-															MdCancel
-														) : info.getValue() === 'Error' ? (
-															MdOutlineError
-														) : null
-													}
-												/>
-												<Text color={textColor} fontSize='sm' fontWeight='700'>
-													{info.getValue()}
-												</Text>
-											</Flex> 
+				<Flex align='center'>
+					<Icon
+						w='24px'
+						h='24px'
+						me='5px'
+						color={
+							info.getValue() === 'Approved' ? (
+								'green.500'
+							) : info.getValue() === 'Disable' ? (
+								'red.500'
+							) : info.getValue() === 'Error' ? (
+								'orange.500'
+							) : null
+						}
+						as={
+							info.getValue() === 'Approved' ? (
+								MdCheckCircle
+							) : info.getValue() === 'Disable' ? (
+								MdCancel
+							) : info.getValue() === 'Error' ? (
+								MdOutlineError
+							) : null
+						}
+					/>
+					<Text color={textColor} fontSize='sm' fontWeight='700'>
+						{info.getValue()}
+					</Text>
+				</Flex>
 			)
 		}),
 		columnHelper.accessor('date', {
@@ -129,7 +129,7 @@ export default function ComplexTable(props: { tableData: any }) {
 			)
 		})
 	];
-	const [ data, setData ] = React.useState(() => [ ...defaultData ]);
+	const [data, setData] = React.useState(() => [...defaultData]);
 	const table = useReactTable({
 		data,
 		columns,
@@ -159,7 +159,7 @@ export default function ComplexTable(props: { tableData: any }) {
 										<Th
 											key={header.id}
 											colSpan={header.colSpan}
-											pe='10px' 
+											pe='10px'
 											borderColor={borderColor}
 											cursor='pointer'
 											onClick={header.column.getToggleSortingHandler()}>
@@ -203,4 +203,3 @@ export default function ComplexTable(props: { tableData: any }) {
 		</Card>
 	);
 }
- 

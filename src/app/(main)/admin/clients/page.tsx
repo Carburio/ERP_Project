@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 
 // Custom componenets
-import ComplexTable from 'components/table/ComplexTable';
+import ComplexTable from 'views/admin/clients/components/ComplexTable';
 // Table data
 import Clients from 'views/admin/clients/variables/tableDataClients';
 

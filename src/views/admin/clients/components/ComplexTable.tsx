@@ -21,18 +21,32 @@ import {
 } from '@tanstack/react-table';
 
 // Custom components
-import { DocumentIcon } from 'components/icons/Icons'
+import { DocumentIcon, GlobeIcon } from 'components/icons/Icons'
 import Card from 'components/card/Card';
 import Menu from 'components/menu/MainMenu';
 
 type RowObj = {
-	businessName: [string, boolean];
+	businessName: string;
 	vatNumber: string;
 	mail: string;
 	phone: string;
 	registeredOffice: string;
 };
 const columnHelper = createColumnHelper<RowObj>();
+
+function RowActions() {
+	const textColor = useColorModeValue('secondaryGrey.900', 'white');
+	return (
+		<Flex align='center'>
+			<Button color={textColor} fontSize='sm' fontWeight='700'>
+				<DocumentIcon />
+			</Button>
+			<Button color={textColor} fontSize='sm' fontWeight='700'>
+				<GlobeIcon />
+			</Button>
+		</Flex>
+	)
+}
 
 /**
  * TODOS :
@@ -144,24 +158,7 @@ export default function ComplexTable(props: { tableData: any }) {
 		}),
 		columnHelper.display({
 			id: 'actions',
-			// header: () => (
-			// 	<Text
-			// 		justifyContent='space-between'
-			// 		align='center'
-			// 		fontSize={{ sm: '10px', lg: '12px' }}
-			// 		color='gray.400'>
-			// 		Actions
-			// 	</Text>
-			// ),
-			cell: (info) => (
-				<Flex align='center'>
-					<Button color={textColor} fontSize='sm' fontWeight='700'>
-						<DocumentIcon>
-							{info.getValue()}
-						</ DocumentIcon>
-					</Button>
-				</Flex>
-			)
+			cell: props => <RowActions row={props.vatNumber} />,
 		})
 	];
 	const [data, setData] = React.useState(() => [...defaultData]);

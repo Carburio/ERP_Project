@@ -56,12 +56,12 @@ const routes: IRoute[] = [
     ),
     secondary: true,
   }, 
-   {
-    name: 'Fatture',
-    layout: '/admin',
-    path: '/fatture',
-    icon: <Icon as={MdPayments} width="20px" height="20px" color="inherit" />,
-  },
+  //  {
+  //   name: 'Fatture',
+  //   layout: '/admin',
+  //   path: '/fatture',
+  //   icon: <Icon as={MdPayments} width="20px" height="20px" color="inherit" />,
+  // },
   {
     name: 'Distinta Base',
     layout: '/admin',
@@ -74,12 +74,12 @@ const routes: IRoute[] = [
     path: '/profilo',
     icon: <Icon as={MdPerson} width="20px" height="20px" color="inherit" />,
   },
-  {
-    name: 'Tables',
-    layout: '/admin',
-    path: '/data-tables',
-    icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
-  },
+  // {
+  //   name: 'Tables',
+  //   layout: '/admin',
+  //   path: '/data-tables',
+  //   icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
+  // },
   // {
   //   name: 'RTL Admin',
   //   layout: '/rtl',
